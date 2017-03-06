@@ -83,7 +83,7 @@ func fixOutOfBoard(g *game, b *objects.Base) {
 //******************************** Engine of player
 
 func killPlayer(g *game) {
-	//use the imagination
+	addExplosion(g, g.player.Base.X, g.player.Base.Y)
 }
 
 func hurtPlayer(g *game, damage int) {
@@ -254,7 +254,6 @@ func explosionsEngine(g *game) {
 		}
 	}
 }
-
 
 func addExplosion(g *game, x,y int) {
 	g.explosions = append(g.explosions, objects.NewExplosion(x,y))
