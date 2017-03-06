@@ -33,10 +33,10 @@ func NewGame() game {
 
 func (g *game) Run() {
 
-	//inizialize game
+	//initialize game
 	g.initialize()
 
-	//inizialize Termbox
+	//initialize Termbox
 	t.SetOutputMode(t.Output256)
 	err := t.Init()
 	if err != nil {
@@ -68,10 +68,10 @@ func (g *game) initialize() {
 	g.maxPlayerFires = 5
 	g.seed = 5
 
-	//inizialize player
+	//initialize player
 	g.player = objects.NewPlayer( utils.GetRandomNum(5,g.boardWidth-5), utils.GetRandomNum(g.boardHeight-5, g.boardHeight-1))
 
-	//inizialize enemies
+	//initialize enemies
 	for i := 0; i < utils.GetRandomNum(7, 40); i++ {
 		enemy := objects.NewEnemy( utils.GetRandomNum(5,g.boardWidth-20), utils.GetRandomNum(1,5) )
 		g.enemies = append(g.enemies, enemy )
