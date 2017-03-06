@@ -37,6 +37,8 @@ func (e *Explosion) NextFrame() bool {
 			e.Base.BodyMatrix =  assets.Explosion1F3()
 		case e.FrameIndex == 3:
 			e.Base.BodyMatrix =  assets.Explosion1F4()
+		case e.FrameIndex == 4:
+			e.Base.BodyMatrix =  assets.Explosion1F5()
 		default:
 			return false
 	}
@@ -46,15 +48,13 @@ func (e *Explosion) NextFrame() bool {
 }
 
 func (e *Explosion) Render() {
-	if(e.Base.BodyMatrix != nil) {
+	for y,valY := range e.Base.BodyMatrix {
+		for x,valX := range valY {
 
-		for y,valY := range e.Base.BodyMatrix {
-			for x,valX := range valY {
+			centerX := e.Base.GetWidth() / 2
+			centerY := e.Base.GetHeight() / 2
 
-				t.SetCell(e.Base.X+x, e.Base.Y+y, valX, e.Base.ForeColor, e.Base.BgColor)
-			}
+			t.SetCell( (e.Base.X - centerX )+x, (e.Base.Y - centerY )+y, valX, e.Base.ForeColor, e.Base.BgColor)
 		}
-	} else {
-		t.SetCell(e.Base.X, e.Base.Y, e.Base.Body, e.Base.ForeColor, e.Base.BgColor)
 	}
 }

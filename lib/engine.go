@@ -231,7 +231,7 @@ func enemiesEngine(g *game) {
 }
 
 func killEnemy(g *game, index int) {
-	addExplosion(g.enemies[index].Base.X, g.enemies[index].Base.Y)
+	addExplosion(g, g.enemies[index].Base.X, g.enemies[index].Base.Y)
 	g.enemies = append(g.enemies[:index], g.enemies[index+1:]...)
 }
 
@@ -239,8 +239,18 @@ func killEnemy(g *game, index int) {
 //******************************** Explosions
 func explosionsEngine(g *game) {
 	for i,_ := range g.explosions {
-		if ! g.explosions[i].NextFrame() {
-			g.explosions = append(g.explosions[:i], g.explosions[i+1:]...)
+
+		if(i < len(g.explosions)) {
+			
+			if g.explosions[i].Base.Sleep > 0 {
+				g.explosions[i].Base.Sleep --
+			} else {
+				g.explosions[i].Base.Sleep += 5
+				
+				if ! g.explosions[i].NextFrame() {
+					g.explosions = append(g.explosions[:i], g.explosions[i+1:]...)
+				}
+			}
 		}
 	}
 }
