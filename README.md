@@ -17,7 +17,8 @@ Next features ??
 - multiplayer
 - decent system of levels with many many many monsters
 
-![example](https://raw.github.com/adam-p/markdown-here/master/store-assets/markdown-here-image2.gimp.png)
+![img1](https://raw.githubusercontent.com/angeloLed/GalactixBash/master/img1.png)
+![img2](https://raw.githubusercontent.com/angeloLed/GalactixBash/master/img2.png)
 
 License
 -------
