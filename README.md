@@ -17,6 +17,8 @@ Next features ??
 - multiplayer
 - decent system of levels with many many many monsters and boss
 
+Screenshot
+-----
 ![img1](https://raw.githubusercontent.com/angeloLed/GalactixBash/master/img1.png)
 ![img2](https://raw.githubusercontent.com/angeloLed/GalactixBash/master/img2.png)
 
